@@ -38,10 +38,6 @@ def predict():
             return render_template('index.html',pred='Patient  is safe Patient doesnot have CKD')
     else:
         return render_template('index.html')
-    
-# if __name__=='__main__':
-#      app.run(debug=True)
-
 app.add_url_rule('/tool', 'webio_view', webio_view(predict), methods=['GET','POST', 'OPTIONS'])
 
 if __name__ == '__main__':
@@ -50,5 +46,10 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     start_server(predict, port=args.port)
+    
+# if __name__=='__main__':
+#      app.run(debug=True)
+
+
 
 # app.run(host='localhost', port=80)
