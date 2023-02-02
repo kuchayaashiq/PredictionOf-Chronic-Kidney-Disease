@@ -3,6 +3,9 @@ from pywebio.platform.flask import webio_view
 from pywebio import STATIC_PATH
 from pywebio.input import *
 from pywebio.output import *
+import argparse
+from pywebio import start_server
+
 import pickle
 import numpy as np
 from sklearn.preprocessing import StandardScaler
@@ -41,4 +44,11 @@ def predict():
 
 app.add_url_rule('/tool', 'webio_view', webio_view(predict), methods=['GET','POST', 'OPTIONS'])
 
-app.run(host='localhost', port=80)
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-p", "--port", type=int, default=8080)
+    args = parser.parse_args()
+
+    start_server(predict, port=args.port)
+
+# app.run(host='localhost', port=80)
