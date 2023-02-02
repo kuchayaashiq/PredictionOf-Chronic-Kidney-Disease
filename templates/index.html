@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link rel="stylesheet" href="./static/css/style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row1">
+                <h1>CKD PREDICTION</h1>              
+                <h3> Prediction of Chronic Kidney Disease</h3>
+                <br>
+                <br>
+            </div>
+            <!-- {{ url_for('predict')}} -->
+            <form action="/predict" method="POST" class="col s12">
+                 <div class="row">
+                <div class="col-md">
+                    <span class="input-group-text" id="basic-addon1">white Blood Cell Count</span>
+                    <input name="wc" class="form-control" type="text"   type="number " placeholder="white Blood Cell Count" aria-label="white Blood Cell Count" aria-describedby="basic-addon1">
+                
+                    <br>
+                    <span class="input-group-text" id="basic-addon1">Blood Glucose Random</span>
+                    <input type="text" class="form-control"name="bgr" type="number " placeholder="Blood Glucose Random" aria-label="Blood Glucose Random" aria-describedby="basic-addon1">
+                    <br>
+                    <span class="input-group-text" id="basic-addon1">Blood Urea</span>
+                    <input type="text" class="form-control" name="bu" type="number " placeholder="Blood Urea" aria-label="Blood Urea" aria-describedby="basic-addon1">
+                    <br>
+                    <span class="input-group-text" id="basic-addon1">Serum Creatinine</span>
+                    <input type="text" class="form-control" name="sc" type="number " placeholder="Serum Creatinine" aria-label="Serum Creatinine" aria-describedby="basic-addon1">
+                    <br>
+                    <span class="input-group-text" id="basic-addon1">Packed Cell Volume</span>
+                    <input type="text" class="form-control" name="pcv" type="number " placeholder="Packed Cell Volume" aria-label="Packed Cell Volume" aria-describedby="basic-addon1">
+                </div>
+                <div class="col-md">
+                    <span class="input-group-text" id="basic-addon1">Albumin</span>
+                    <input type="text" class="form-control" name="al" type="number " placeholder="Albumin" aria-label="Albumin" aria-describedby="basic-addon1">
+                    <br>
+                    <span class="input-group-text" id="basic-addon1">Hemoglobin</span>
+                    <input type="text" class="form-control" name="hemo" type="number " placeholder="Hemoglobin" aria-label="Hemoglobin" aria-describedby="basic-addon1">
+                    <br>
+                    <span class="input-group-text" id="basic-addon1">Age</span>
+                    <input type="text" class="form-control" name="age" type="number " placeholder="Age" aria-label="Age" aria-describedby="basic-addon1">
+                    <br>
+                    <span class="input-group-text" id="basic-addon1">Sugar</span>
+                    <input type="text" class="form-control" name="su" type="number " placeholder="Sugar" aria-label="Sugar" aria-describedby="basic-addon1">
+                    <br>
+                    <span class="input-group-text" id="basic-addon1">Hypertension</span>
+                    <input type="text" class="form-control" name="htn" type="number " placeholder="Hypertension" aria-label="Hypertension" aria-describedby="basic-addon1">
+                </div>
+                 </div>
+                 <button class="glow-on-hover" type="submit">PREDICT!</button>
+        </form>
+    </div>
+
+    <br>
+    <h3 id="pred" style="text-align: center;">{{pred}}</h3>
+    <br>
+
+  </div>
+        </div>
+        
+        <script src="" async defer></script>
+    </body>
+</html>
