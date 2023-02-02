@@ -1,4 +1,8 @@
 from flask import Flask, request, url_for, render_template
+from pywebio.platform.flask import webio_view
+from pywebio import STATIC_PATH
+from pywebio.input import *
+from pywebio.output import *
 import pickle
 import numpy as np
 from sklearn.preprocessing import StandardScaler
@@ -32,5 +36,9 @@ def predict():
     else:
         return render_template('index.html')
     
-if __name__=='__main__':
-     app.run(debug=True)
+# if __name__=='__main__':
+#      app.run(debug=True)
+
+app.add_url_rule('/tool', 'webio_view', webio_view(predict), methods=['GET','POST', 'OPTIONS'])
+
+app.run(host='localhost', port=80)
